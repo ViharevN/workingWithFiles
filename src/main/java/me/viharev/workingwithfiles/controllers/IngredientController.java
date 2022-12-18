@@ -42,7 +42,7 @@ public class IngredientController {
                             description = "Ингредиент добавлен",
                             content = {
                                     @Content(
-                                            mediaType = "app/json",
+                                            mediaType = "application/json",
                                             array = @ArraySchema(
                                                     schema = @Schema(
                                                             implementation = Ingredient.class

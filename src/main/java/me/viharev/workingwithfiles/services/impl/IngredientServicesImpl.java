@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import me.viharev.workingwithfiles.models.Ingredient;
 import me.viharev.workingwithfiles.services.FileServicesIngredient;
 import me.viharev.workingwithfiles.services.IngredientServices;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;

@@ -35,7 +35,7 @@ public class RecipeController {
                             description = "рецепт добавлен",
                             content = {
                                     @Content(
-                                            mediaType = "app/json",
+                                            mediaType = "application/json",
                                             array = @ArraySchema(schema=@Schema(implementation = Recipe.class))
                                     )
                             }
