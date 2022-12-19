@@ -61,9 +61,9 @@ public class RecipeController {
             summary = "изменение рецепта",
             description = "изменяем рецепт по его id"
     )
-    public Recipe editRecipe(@PathVariable Integer id, @RequestBody Recipe recipe) {
+    public ResponseEntity<Recipe> editRecipe(@PathVariable Integer id, @RequestBody Recipe recipe) {
         this.recipeServices.editRecipe(id, recipe);
-        return recipe;
+        return ResponseEntity.ok(recipe);
     }
 
     @DeleteMapping("/delete/{id}")

@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import me.viharev.workingwithfiles.models.Ingredient;
 import me.viharev.workingwithfiles.services.IngredientServices;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -53,9 +54,9 @@ public class IngredientController {
                     )
             }
     )
-    public Ingredient addIngredientInMap(@RequestBody Ingredient ingredient) {
+    public ResponseEntity<Ingredient> addIngredientInMap(@RequestBody Ingredient ingredient) {
         this.ingredientServices.addIngredient(ingredient);
-        return ingredient;
+        return ResponseEntity.ok(ingredient);
     }
 
     @PutMapping("/ingredient/edit/{id}")
@@ -74,10 +75,13 @@ public class IngredientController {
             description = "удаляем ингредиент по его id"
     )
     public boolean deleteIngredient(@PathVariable Integer id) {
-        if (this.ingredientServices.removeIngredient(id)) {
+        try {
+            this.ingredientServices.removeIngredient(id);
             return true;
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            return false;
         }
-        return false;
     }
 
     @GetMapping("/get/all")
@@ -85,7 +89,7 @@ public class IngredientController {
             summary = "получаем ингредиенты",
             description = "получаем все ингредиенты"
     )
-    public Ingredient getAllIngredients() {
-        return this.ingredientServices.getAllIngredients();
+    public ResponseEntity<Ingredient> getAllIngredients() {
+        return ResponseEntity.ok(ingredientServices.getAllIngredients());
     }
 }

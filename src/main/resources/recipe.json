@@ -1,1 +1,1 @@
-{"0":{"nameRecipe":"string","timeOfPreparing":0,"ingredientList":[{"nameIngredient":"string","quantityOfIngredients":0,"unit":"string"}],"stepList":["string"]}}
+{"0":{"nameRecipe":"Rice and meat","timeOfPreparing":45,"ingredientList":[{"nameIngredient":"rice","quantityOfIngredients":300,"unit":"gramm"},{"nameIngredient":"meat","quantityOfIngredients":250,"unit":"gramm"}],"stepList":["string"]}}
